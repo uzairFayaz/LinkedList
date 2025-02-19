@@ -25,6 +25,45 @@ public class LL {
         }
         System.out.println("End");
     }
+    public int deleteFirst(){
+        int val = head.value;
+        head = head.next;
+        if(head == null){
+            head = tail;
+        }
+        size--;
+        return val;
+    }
+    public int deleteLast(){
+        if (size <= 1) {
+            return deleteFirst();
+        }
+        Node secondlast = get(size - 2);
+        int val = secondlast.value;
+        tail = secondlast;
+        tail.next = null;
+        return val;
+    }
+    public Node get(int index){
+        Node node = head;
+        for (int i = 1; i <index ; i++) {
+            node = node.next;
+
+        }
+        return node;
+    }
+    public int delete(int index){
+        if(index == 0){
+            return deleteFirst();
+        }
+        if(index == size -1){
+            return deleteLast();
+        }
+        Node prev = get(index -1);
+        int val = prev.next.value;
+        prev.next= prev.next.next;
+        return val;
+    }
 
     public class Node{
         private int value;

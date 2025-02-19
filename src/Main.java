@@ -8,6 +8,18 @@ public class Main {
         list.inserFirst(5);
         list.inserFirst(7);
         list.display();
+        System.out.println(list.deleteFirst());
+        list.display();
+        System.out.println(list.deleteLast());
+        list.display();
+        list.inserFirst(2);
+        list.inserFirst(5);
+        list.inserFirst(3);
+        list.inserFirst(9);
+        list.display();
+        System.out.println(list.delete(4));
+        list.display();
+
 
     }
     }
